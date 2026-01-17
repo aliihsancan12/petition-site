@@ -540,6 +540,17 @@ section {
             display: block;
             margin-bottom: 5px;
         }
+    .hero {
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("anasayfa.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 60vh; /* Header küçüldüğü için bu alanı da biraz daraltabilirsiniz */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+ } 
 
 
 /* RESPONSIVE AYARLAR (Mobil Uyum) */
@@ -598,5 +609,6 @@ section {
         grid-template-columns: 1fr;
     }
 }
+
 
 
