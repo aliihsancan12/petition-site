@@ -27,8 +27,8 @@ body {
 
 /* --- LOGO STİLLERİ --- */
 .logo img {
-    height: 4rem;
-    width: auto;
+    height: auto;
+    width: 150px;
     object-fit: contain;
 }
 
@@ -412,6 +412,10 @@ body {
     background-color: #1ebe5d;
     transform: translateY(-3px);
 }
+nav a{
+    text-decoration; none;
+    color inherit;
+}
 
 /* Mobil görünüm */
 @media (max-width: 768px) {
@@ -594,3 +598,4 @@ section {
         grid-template-columns: 1fr;
     }
 }
+
