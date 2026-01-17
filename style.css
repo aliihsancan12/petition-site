@@ -416,6 +416,17 @@ nav a{
     text-decoration; none;
     color inherit;
 }
+.hero {
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("anasayfa.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 60vh; /* Header küçüldüğü için bu alanı da biraz daraltabilirsiniz */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+} 
 
 /* Mobil görünüm */
 @media (max-width: 768px) {
@@ -599,6 +610,7 @@ section {
         grid-template-columns: 1fr;
     }
 }
+
 
 
 
