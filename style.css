@@ -14,10 +14,10 @@ body {
 /* --- HEADER DÜZENLEMESİ (Yan Yana Hizalama) --- */
 .header {
     background: #000;
-    padding: 0.1rem 3%;
+    padding: 0.2rem 3%;
     display: flex;
     align-items: center;
-    gap: 0.5rem; /* Logo ile menü arasında boşluk */
+    gap: 1rem; /* Logo ile menü arasında boşluk */
     border-bottom: 0.1rem solid #333;
     position: sticky;
     top: 0;
@@ -35,14 +35,14 @@ body {
 /* --- NAVİGASYON (Menü Linkleri) --- */
 .navbar {
     display: flex;
-    gap: 0.75rem;
+    gap: 1rem;
     flex: 1; /* NAVBAR kalan tüm alanı doldurur */
 }
 .navbar a {
     color: #fff;
-    font-size: 0.5rem;
+    font-size: 1rem;
     text-decoration: none;
-    padding: 0.25rem;
+    padding: 0.5rem;
     white-space: nowrap;
 }
 
@@ -613,6 +613,7 @@ section {
         grid-template-columns: 1fr;
     }
 }
+
 
 
 
