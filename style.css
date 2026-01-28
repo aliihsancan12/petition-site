@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    text-transform: uppercase; 
+    text-transform: none; 
 }
 
 body {
@@ -67,7 +67,7 @@ body {
     image-rendering: -webkit-optimize-contrast; /* Resmin daha net görünmesini sağlar */
     background-attachment: fixed;
 }
-}
+
 .hero .content {
     max-width: 500px; 
     color: #fff; 
@@ -612,7 +612,67 @@ section {
     .hizmet-kartlari {
         grid-template-columns: 1fr;
     }
+    /* ===== MOBİL DÜZELTMELER (KRİTİK) ===== */
+@media (max-width: 768px) {
+
+    /* HERO */
+    .hero {
+        min-height: auto;
+        height: auto;
+        padding: 3rem 5%;
+        background-attachment: scroll;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero .content {
+        max-width: 100%;
+        padding: 1rem;
+        border-radius: 0.8rem;
+    }
+
+    .hero .content h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero .content p {
+        font-size: 1rem;
+    }
+
+    /* HEADER */
+    .header {
+        flex-direction: column;
+        padding: 0.8rem 5%;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .navbar a {
+        font-size: 0.9rem;
+        padding: 0.3rem;
+    }
+
+    /* GRID ALANLARI */
+    .tecrube-grid,
+    .sss-kvkk-alani,
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+    }
+
+    /* GENEL TAŞMALARI ENGELLE */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
 } 
+
 
 
 
