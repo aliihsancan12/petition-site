@@ -6,14 +6,15 @@
     
     <title>Dilekçe Kapısı | Profesyonel Hukuki Dilekçe Yazım Hizmeti</title>
     
-    <!-- Meta Etiketleri -->
+    <!-- SEO Meta Etiketleri -->
     <meta name="description" content="30 yıllık adliye tecrübesi ile dilekçelerinizi resmi usule uygun hazırlıyoruz.">
-    <meta property="og:image" content="logo.png">
+    <meta property="og:image" content="images/logo.png">
 
-    <!-- Font Awesome -->
+    <!-- Font Awesome İkon Kütüphanesi -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
+        /* --- CSS DEĞİŞKENLERİ --- */
         :root {
             --primary: #007bff;
             --secondary: #ffd700;
@@ -23,8 +24,18 @@
             --warning: #e67e22;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; text-transform: uppercase; }
-        html { scroll-behavior: smooth; }
+        /* --- GENEL AYARLAR --- */
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            text-transform: uppercase; 
+        }
+
+        html { 
+            scroll-behavior: smooth; 
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--light);
@@ -33,10 +44,10 @@
             overflow-x: hidden;
         }
 
-        /* --- HEADER --- */
+        /* --- HEADER (ÜST MENÜ) --- */
         header {
             background: #000;
-            padding: 15px 0; /* İçerik büyüdüğü için padding biraz dengelendi */
+            padding: 10px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -47,29 +58,28 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1100px; /* Daha toplu durması için genişlik biraz daraltıldı */
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 25px;
+            padding: 0 20px;
         }
 
         .logo {
             display: flex;
             align-items: center;
             text-decoration: none;
-            flex-shrink: 0; /* Logonun sıkışmasını engeller */
         }
 
         .logo img {
-            height: 85px; /* Logo boyutu biraz daha büyütüldü */
+            height: 80px;
             width: auto;
             display: block;
             object-fit: contain;
-            filter: brightness(1.1) contrast(1.1); /* Siyah zeminde daha net görünüm */
+            filter: brightness(1.1);
         }
 
         .navbar { 
             display: flex; 
-            gap: 15px; 
+            gap: 10px; 
             align-items: center;
         }
 
@@ -78,9 +88,9 @@
             text-decoration: none; 
             font-size: 0.85rem; 
             font-weight: 700; 
-            padding: 10px 15px; 
+            padding: 10px 12px; 
             transition: all 0.3s ease;
-            border-radius: 4px;
+            border-radius: 5px;
         }
 
         .navbar a:hover, .navbar a.active { 
@@ -88,11 +98,12 @@
             background: rgba(255, 255, 255, 0.1);
         }
 
-        /* --- HERO (GİRİŞ) --- */
+        /* --- HERO (GİRİŞ ALANI) --- */
         .hero {
+            /* Resim burada arka plan olarak ayarlandı */
             background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
                         url('images/anasayfa.jpg'), 
-                        linear-gradient(45deg, #000, #222);
+                        #111;
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
@@ -104,8 +115,22 @@
             padding: 60px 20px;
         }
 
-        .hero h1 { font-size: clamp(1.8rem, 5vw, 3.5rem); color: var(--secondary); margin-bottom: 25px; line-height: 1.2; }
-        .hero p { color: #fff; text-transform: none; font-size: 1.15rem; margin-bottom: 35px; max-width: 850px; }
+        .hero h1 { 
+            font-size: clamp(1.8rem, 5vw, 3.2rem); 
+            color: var(--secondary); 
+            margin-bottom: 25px; 
+            line-height: 1.2; 
+        }
+
+        .hero p { 
+            color: #fff; 
+            text-transform: none; 
+            font-size: 1.1rem; 
+            margin-bottom: 35px; 
+            max-width: 800px; 
+            margin-left: auto;
+            margin-right: auto;
+        }
 
         .btn-main {
             display: inline-block;
@@ -116,88 +141,37 @@
             border-radius: 6px;
             font-weight: bold;
             transition: 0.3s;
-            border: 2px solid transparent;
         }
 
-        .btn-main:hover { transform: translateY(-3px); background: #0056b3; box-shadow: 0 8px 20px rgba(0,123,255,0.4); border-color: rgba(255,255,255,0.2); }
+        .btn-main:hover { 
+            transform: translateY(-3px); 
+            background: #0056b3; 
+        }
 
         /* --- DİĞER BÖLÜMLER --- */
         section { padding: 80px 0; }
         .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-        .section-title { text-align: center; margin-bottom: 50px; font-size: 2.2rem; position: relative; font-weight: 800; }
-        .section-title::after { content: ''; display: block; width: 80px; height: 5px; background: var(--primary); margin: 15px auto; border-radius: 2px; }
+        .section-title { text-align: center; margin-bottom: 50px; font-size: 2.2rem; font-weight: 800; }
         
         .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .price-card { 
-            background: var(--white); 
-            padding: 40px; 
-            border-radius: 16px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
-            border-top: 6px solid var(--primary); 
-            transition: 0.3s;
-            text-align: center;
-        }
-        .price-card:hover { transform: translateY(-8px); box-shadow: 0 15px 40px rgba(0,0,0,0.12); }
+        .price-card { background: var(--white); padding: 40px; border-radius: 16px; border-top: 6px solid var(--primary); text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
 
-        .experience-box { 
-            background: var(--primary); 
-            color: #fff; 
-            padding: 60px; 
-            border-radius: 20px; 
-            text-align: center; 
-            box-shadow: 0 10px 25px rgba(0,123,255,0.3);
-        }
-        .experience-box .num { font-size: 6rem; font-weight: 900; display: block; line-height: 1; margin-bottom: 10px; }
+        .experience-box { background: var(--primary); color: #fff; padding: 50px; border-radius: 15px; text-align: center; }
+        .experience-box .num { font-size: 5.5rem; font-weight: 900; display: block; }
 
-        .warning-box { border: 2px solid var(--warning); background: #fffaf5; padding: 40px; border-radius: 16px; position: relative; overflow: hidden; }
-        .warning-box::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 6px; background: var(--warning); }
+        .warning-box { border: 2px solid var(--warning); background: #fffaf5; padding: 40px; border-radius: 16px; }
 
-        .whatsapp-section { 
-            background: #25D366; 
-            color: #fff; 
-            padding: 45px; 
-            border-radius: 20px; 
-            text-align: center; 
-            text-decoration: none; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            gap: 15px;
-            transition: 0.3s;
-            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
-        }
-        .whatsapp-section:hover { background: #1ebe5d; transform: scale(1.03); }
-        
-        footer { background: #000; color: #888; text-align: center; padding: 40px 0; font-size: 0.9rem; border-top: 1px solid #222; }
+        .whatsapp-section { background: #25D366; color: #fff; padding: 40px; border-radius: 20px; text-align: center; text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 15px; }
 
-        /* MOBİL AYAR */
+        footer { background: #000; color: #888; text-align: center; padding: 40px 0; border-top: 1px solid #222; }
+
+        /* --- MOBİL AYARLAR --- */
         .menu-btn { display: none; color: #fff; font-size: 2rem; cursor: pointer; }
-        
         @media (max-width: 992px) {
-            .header-content { padding: 0 20px; }
-            .logo img { height: 65px; }
             .menu-btn { display: block; }
-            .navbar { 
-                position: fixed; 
-                top: 95px; 
-                left: -100%; 
-                width: 100%; 
-                height: 100vh; 
-                background: rgba(0, 0, 0, 0.95); 
-                backdrop-filter: blur(10px);
-                flex-direction: column; 
-                align-items: center; 
-                padding-top: 60px; 
-                transition: 0.4s ease; 
-            }
+            .navbar { position: fixed; top: 100px; left: -100%; width: 100%; height: 100vh; background: #000; flex-direction: column; padding-top: 50px; transition: 0.4s; }
             .navbar.active { left: 0; }
-            .navbar a { font-size: 1.2rem; width: 80%; text-align: center; padding: 15px; border-bottom: 1px solid #333; }
-        }
-
-        @media (max-width: 480px) {
-            .logo img { height: 55px; }
-            .section-title { font-size: 1.8rem; }
-            .price-card { padding: 30px 20px; }
+            .navbar a { font-size: 1.2rem; padding: 15px; width: 100%; text-align: center; }
         }
     </style>
 </head>
@@ -206,8 +180,7 @@
     <header>
         <div class="header-content">
             <a href="#anasayfa" class="logo">
-                <!-- Logo Görünmeme Sorunu Giderme: images/logo.png yolunu kontrol edin -->
-                <img src="logo.png" alt="Dilekçe Kapısı" onerror="this.onerror=null; this.src='https://via.placeholder.com/250x100/000000/FFFFFF?text=DİLEKÇE+KAPISI';">
+                <img src="images/logo.png" alt="Dilekçe Kapısı" onerror="this.src='https://via.placeholder.com/250x100/000000/FFFFFF?text=DİLEKÇE+KAPISI';">
             </a>
             <div class="menu-btn" id="mobileMenuBtn">
                 <i class="fas fa-bars"></i>
@@ -222,38 +195,39 @@
         </div>
     </header>
 
+    <!-- DÜZELTİLMİŞ HERO BÖLÜMÜ -->
     <section class="hero" id="anasayfa">
         <div class="container">
-            <img src="images/anasayfa.jpg" alt="Dilekçe Kapısı Ana Sayfa" 
             <h1>PROFESYONEL DİLEKÇE YAZIMI İÇİN BİZE ULAŞIN!</h1>
             <p>30 yıllık adliye tecrübemizle, taleplerinizi resmi yazışma kurallarına %100 uygun hazırlıyoruz. Hak kaybı yaşamamanız için uzman desteği alın.</p>
             <a href="#iletisim" class="btn-main">İLETİŞİME GEÇ</a>
         </div>
     </section>
 
+    <!-- FİYATLAR -->
     <section id="fiyatlar">
         <div class="container">
             <h2 class="section-title">HİZMETLERİMİZ VE FİYATLAR</h2>
             <div class="price-grid">
                 <div class="price-card">
-                    <h3 style="color:var(--primary); font-weight:800;">İCRA İTİRAZ</h3>
-                    <div class="price-tag" style="font-size: 2.2rem; font-weight: 800; margin: 20px 0;">690 TL</div>
+                    <h3>İCRA İTİRAZ</h3>
+                    <div style="font-size: 2.2rem; font-weight: 800; margin: 15px 0;">690 TL</div>
                     <ul style="list-style:none; text-transform:none; text-align:left;">
                         <li style="margin-bottom:10px;"><i class="fas fa-check" style="color:#28a745; margin-right:10px;"></i> RESMİ USULE UYGUN</li>
                         <li><i class="fas fa-check" style="color:#28a745; margin-right:10px;"></i> HIZLI TESLİMAT</li>
                     </ul>
                 </div>
                 <div class="price-card">
-                    <h3 style="color:var(--primary); font-weight:800;">BOŞANMA</h3>
-                    <div class="price-tag" style="font-size: 2.2rem; font-weight: 800; margin: 20px 0;">950 TL'DEN</div>
+                    <h3>BOŞANMA</h3>
+                    <div style="font-size: 2.2rem; font-weight: 800; margin: 15px 0;">950 TL'DEN</div>
                     <ul style="list-style:none; text-transform:none; text-align:left;">
                         <li style="margin-bottom:10px;"><i class="fas fa-check" style="color:#28a745; margin-right:10px;"></i> PROTOKOL DESTEĞİ</li>
                         <li><i class="fas fa-check" style="color:#28a745; margin-right:10px;"></i> GEREKÇELİ YAZIM</li>
                     </ul>
                 </div>
                 <div class="price-card">
-                    <h3 style="color:var(--primary); font-weight:800;">KİRA DAVALARI</h3>
-                    <div class="price-tag" style="font-size: 2.2rem; font-weight: 800; margin: 20px 0;">790 TL</div>
+                    <h3>KİRA DAVALARI</h3>
+                    <div style="font-size: 2.2rem; font-weight: 800; margin: 15px 0;">790 TL</div>
                     <ul style="list-style:none; text-transform:none; text-align:left;">
                         <li style="margin-bottom:10px;"><i class="fas fa-check" style="color:#28a745; margin-right:10px;"></i> TAHLİYE TALEPLERİ</li>
                         <li><i class="fas fa-check" style="color:#28a745; margin-right:10px;"></i> RESMİ ÜSLUP</li>
@@ -263,16 +237,17 @@
         </div>
     </section>
 
+    <!-- HAKKIMIZDA -->
     <section id="hakkimizda" style="background:#fff">
         <div class="container">
             <div class="about-flex">
                 <div class="about-text">
-                    <h2 style="margin-bottom: 25px; font-weight:800; border-left: 5px solid var(--primary); padding-left: 20px;">NEDEN BENİ TERCİH ETMELİSİNİZ?</h2>
+                    <h2>NEDEN BENİ TERCİH ETMELİSİNİZ?</h2>
                     <p style="text-transform: none; font-size: 1.1rem; color: #555;">Dilekçe yazımı sadece kelimeleri yan yana getirmek değildir; hukuki terminolojiye hakimiyet ve ikna edici bir üslup gerektirir. 30 yılı aşkın adliye deneyimimizle yanınızdayız.</p>
                 </div>
                 <div class="experience-box">
                     <span class="num">30+</span>
-                    <p style="font-weight:700; letter-spacing:1px;">YILLIK ADLİYE TECRÜBESİ</p>
+                    <p style="font-weight:700;">YILLIK ADLİYE TECRÜBESİ</p>
                 </div>
             </div>
         </div>
@@ -281,8 +256,8 @@
     <section id="uyarilar">
         <div class="container">
             <div class="warning-box">
-                <h3 style="color:var(--warning); margin-bottom:20px; font-weight:800;"><i class="fas fa-exclamation-triangle" style="margin-right:15px;"></i> YASAL UYARI</h3>
-                <p style="text-transform:none; font-size:1.1rem; color:#444; line-height:1.7;">Sunulan hizmetler hukuk danışmanlığı değil, teknik dilekçe yazım desteğidir. Resmi kurumlara sunulacak dilekçelerin içeriğinden ve hukuki sonuçlarından kullanıcı sorumludur. Karmaşık davalar için bir avukata danışmanız önerilir.</p>
+                <h3 style="color:var(--warning); margin-bottom:20px; font-weight:800;"><i class="fas fa-exclamation-triangle" style="margin-right:10px;"></i> YASAL UYARI</h3>
+                <p style="text-transform:none; font-size:1.1rem; color:#444;">Sunulan hizmetler hukuk danışmanlığı değil, teknik dilekçe yazım desteğidir. Resmi kurumlara sunulacak dilekçelerin içeriğinden ve hukuki sonuçlarından kullanıcı sorumludur.</p>
             </div>
         </div>
     </section>
@@ -290,16 +265,16 @@
     <section id="iletisim" style="background:#fff">
         <div class="container">
             <h2 class="section-title">BİZE ULAŞIN</h2>
-            <div class="contact-container">
-                <div class="contact-info" style="padding:40px; border:2px solid #f0f0f0; border-radius:20px; margin-bottom:30px; text-align:center;">
+            <div class="price-grid">
+                <div style="background:#fcfcfc; padding:30px; border:1px solid #eee; border-radius:20px; text-align:center;">
                     <h4 style="color:var(--primary); margin-bottom:10px;">YETKİLİ: HÜSEYİN CAN</h4>
-                    <p style="font-size:1.4rem; font-weight:800; margin-bottom:10px;">TEL: 0554 024 77 91</p>
-                    <p style="color:#777;">KONUM: DİDİM / AYDIN</p>
+                    <p style="font-size:1.3rem; font-weight:800;">TEL: 0554 024 77 91</p>
+                    <p style="color:#777; margin-top:5px;">KONUM: DİDİM / AYDIN</p>
                 </div>
                 <a href="https://wa.me/905540247791" target="_blank" class="whatsapp-section">
                     <i class="fab fa-whatsapp" style="font-size:4rem"></i>
                     <h3 style="font-weight:900;">WHATSAPP İLE YAZIN</h3>
-                    <p style="text-transform: none; font-size: 1rem; opacity:0.9;">Hızlı yanıt için WhatsApp hattımızı kullanabilirsiniz.</p>
+                    <p style="text-transform: none; opacity:0.9;">Hızlı yanıt için WhatsApp hattımızı kullanabilirsiniz.</p>
                 </a>
             </div>
         </div>
@@ -308,7 +283,6 @@
     <footer>
         <div class="container">
             <p style="font-weight:700; margin-bottom:10px;">&copy; 2026 DİLEKÇE KAPISI - TÜM HAKLARI SAKLIDIR.</p>
-            <p style="font-size:0.8rem; opacity:0.6;">30 Yıllık Tecrübe ile Profesyonel Dilekçe Hazırlama Merkezi</p>
         </div>
     </footer>
 
@@ -318,17 +292,11 @@
 
         mobileMenuBtn.addEventListener('click', () => {
             navMenu.classList.toggle('active');
-            const icon = mobileMenuBtn.querySelector('i');
-            icon.classList.toggle('fa-bars');
-            icon.classList.toggle('fa-times');
         });
 
         document.querySelectorAll('.navbar a').forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
-                const icon = mobileMenuBtn.querySelector('i');
-                icon.classList.add('fa-bars');
-                icon.classList.remove('fa-times');
             });
         });
     </script>
