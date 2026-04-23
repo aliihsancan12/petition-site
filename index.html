@@ -1,4 +1,165 @@
-x; 
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <title>Dilekçe Kapısı | Profesyonel Hukuki Dilekçe Yazım Hizmeti</title>
+    
+    <!-- Meta Etiketleri -->
+    <meta name="description" content="30 yıllık adliye tecrübesi ile dilekçelerinizi resmi usule uygun hazırlıyoruz.">
+    <meta property="og:image" content="images/logo.png">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #007bff;
+            --secondary: #ffd700;
+            --dark: #1a1a1a;
+            --light: #f8f9fa;
+            --white: #ffffff;
+            --warning: #e67e22;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; text-transform: uppercase; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light);
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- HEADER --- */
+        header {
+            background: #000;
+            padding: 15px 0; /* İçerik büyüdüğü için padding biraz dengelendi */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px; /* Daha toplu durması için genişlik biraz daraltıldı */
+            margin: 0 auto;
+            padding: 0 25px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            flex-shrink: 0; /* Logonun sıkışmasını engeller */
+        }
+
+        .logo img {
+            height: 85px; /* Logo boyutu biraz daha büyütüldü */
+            width: auto;
+            display: block;
+            object-fit: contain;
+            filter: brightness(1.1) contrast(1.1); /* Siyah zeminde daha net görünüm */
+        }
+
+        .navbar { 
+            display: flex; 
+            gap: 15px; 
+            align-items: center;
+        }
+
+        .navbar a { 
+            color: #fff; 
+            text-decoration: none; 
+            font-size: 0.85rem; 
+            font-weight: 700; 
+            padding: 10px 15px; 
+            transition: all 0.3s ease;
+            border-radius: 4px;
+        }
+
+        .navbar a:hover, .navbar a.active { 
+            color: var(--secondary); 
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* --- HERO (GİRİŞ) --- */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
+                        url('images/anasayfa.jpg'), 
+                        linear-gradient(45deg, #000, #222);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .hero h1 { font-size: clamp(1.8rem, 5vw, 3.5rem); color: var(--secondary); margin-bottom: 25px; line-height: 1.2; }
+        .hero p { color: #fff; text-transform: none; font-size: 1.15rem; margin-bottom: 35px; max-width: 850px; }
+
+        .btn-main {
+            display: inline-block;
+            padding: 16px 45px;
+            background: var(--primary);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .btn-main:hover { transform: translateY(-3px); background: #0056b3; box-shadow: 0 8px 20px rgba(0,123,255,0.4); border-color: rgba(255,255,255,0.2); }
+
+        /* --- DİĞER BÖLÜMLER --- */
+        section { padding: 80px 0; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        .section-title { text-align: center; margin-bottom: 50px; font-size: 2.2rem; position: relative; font-weight: 800; }
+        .section-title::after { content: ''; display: block; width: 80px; height: 5px; background: var(--primary); margin: 15px auto; border-radius: 2px; }
+        
+        .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .price-card { 
+            background: var(--white); 
+            padding: 40px; 
+            border-radius: 16px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
+            border-top: 6px solid var(--primary); 
+            transition: 0.3s;
+            text-align: center;
+        }
+        .price-card:hover { transform: translateY(-8px); box-shadow: 0 15px 40px rgba(0,0,0,0.12); }
+
+        .experience-box { 
+            background: var(--primary); 
+            color: #fff; 
+            padding: 60px; 
+            border-radius: 20px; 
+            text-align: center; 
+            box-shadow: 0 10px 25px rgba(0,123,255,0.3);
+        }
+        .experience-box .num { font-size: 6rem; font-weight: 900; display: block; line-height: 1; margin-bottom: 10px; }
+
+        .warning-box { border: 2px solid var(--warning); background: #fffaf5; padding: 40px; border-radius: 16px; position: relative; overflow: hidden; }
+        .warning-box::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 6px; background: var(--warning); }
+
+        .whatsapp-section { 
+            background: #25D366; 
+            color: #fff; 
+            padding: 45px; 
+            border-radius: 20px; 
+            text-align: center; 
+            text-decoration: none; 
+            display: flex; 
             flex-direction: column; 
             align-items: center; 
             gap: 15px;
@@ -172,4 +333,3 @@ x;
     </script>
 </body>
 </html>
-
