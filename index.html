@@ -7,7 +7,7 @@
     <title>Dilekçe Kapısı | Profesyonel Hukuki Dilekçe Yazım Hizmeti</title>
     
     <!-- SEO Meta Etiketleri -->
-    <meta name="description" content="30 yıllık adliye tecrübesi ile dilekçelerinizi resmi usule uygun hazırlıyoruz.">
+    <meta name="description" content="30 yıllık adliye tecrübesi ile icra itiraz, boşanma ve kira uyuşmazlığı dilekçelerinizi resmi usule uygun hazırlıyoruz.">
     <meta property="og:image" content="images/logo.png">
 
     <!-- Font Awesome İkon Kütüphanesi -->
@@ -22,6 +22,7 @@
             --light: #f8f9fa;
             --white: #ffffff;
             --warning: #e67e22;
+            --success: #25D366;
         }
 
         /* --- GENEL AYARLAR --- */
@@ -67,6 +68,7 @@
             display: flex;
             align-items: center;
             text-decoration: none;
+            flex-shrink: 0;
         }
 
         .logo img {
@@ -79,18 +81,19 @@
 
         .navbar { 
             display: flex; 
-            gap: 10px; 
+            gap: 5px; 
             align-items: center;
         }
 
         .navbar a { 
             color: #fff; 
             text-decoration: none; 
-            font-size: 0.85rem; 
+            font-size: 0.8rem; 
             font-weight: 700; 
-            padding: 10px 12px; 
+            padding: 10px 10px; 
             transition: all 0.3s ease;
             border-radius: 5px;
+            white-space: nowrap;
         }
 
         .navbar a:hover, .navbar a.active { 
@@ -100,10 +103,9 @@
 
         /* --- HERO (GİRİŞ ALANI) --- */
         .hero {
-            /* Resim burada arka plan olarak ayarlandı */
             background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
                         url('images/anasayfa.jpg'), 
-                        #111;
+                        #000;
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
@@ -143,25 +145,140 @@
             transition: 0.3s;
         }
 
-        .btn-main:hover { 
-            transform: translateY(-3px); 
-            background: #0056b3; 
+        /* --- DİLEKÇELER SECTION (YENİ) --- */
+        .dilekce-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
         }
 
-        /* --- DİĞER BÖLÜMLER --- */
-        section { padding: 80px 0; }
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-        .section-title { text-align: center; margin-bottom: 50px; font-size: 2.2rem; font-weight: 800; }
-        
-        .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .price-card { background: var(--white); padding: 40px; border-radius: 16px; border-top: 6px solid var(--primary); text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .dilekce-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            border: 1px solid #eee;
+        }
 
-        .experience-box { background: var(--primary); color: #fff; padding: 50px; border-radius: 15px; text-align: center; }
-        .experience-box .num { font-size: 5.5rem; font-weight: 900; display: block; }
+        .dilekce-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .dilekce-header {
+            background: #f1f7ff;
+            padding: 20px;
+            border-bottom: 2px solid var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .dilekce-header i {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .dilekce-header h3 {
+            font-size: 1.1rem;
+            color: var(--dark);
+        }
+
+        .dilekce-body {
+            padding: 25px;
+        }
+
+        .dilekce-body p {
+            text-transform: none;
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 15px;
+            min-height: 80px;
+        }
+
+        .dilekce-footer {
+            padding: 15px 25px;
+            background: #fafafa;
+            border-top: 1px solid #eee;
+        }
+
+        .dilekce-tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            font-size: 0.7rem;
+            background: #ddd;
+            padding: 3px 8px;
+            border-radius: 4px;
+            color: #666;
+        }
+
+        /* --- BÖLÜM AYARLARI --- */
+        section { padding: 80px 0; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .section-title { text-align: center; margin-bottom: 50px; font-size: 2.2rem; position: relative; font-weight: 800; }
+        .section-title::after { 
+            content: ''; display: block; width: 80px; height: 5px; background: var(--primary); margin: 15px auto; border-radius: 2px; 
+        }
+        
+        /* --- DİĞER KARTLAR --- */
+        .price-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 30px; 
+        }
+
+        .price-card { 
+            background: var(--white); 
+            padding: 40px; 
+            border-radius: 16px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
+            border-top: 6px solid var(--primary); 
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .about-flex {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .about-text { flex: 1; min-width: 300px; }
+        
+        .experience-box { 
+            flex: 1; 
+            min-width: 300px; 
+            background: var(--primary); 
+            color: #fff; 
+            padding: 50px; 
+            border-radius: 20px; 
+            text-align: center; 
+        }
+
+        .experience-box .num { font-size: 5.5rem; font-weight: 900; display: block; line-height: 1; }
 
         .warning-box { border: 2px solid var(--warning); background: #fffaf5; padding: 40px; border-radius: 16px; }
 
-        .whatsapp-section { background: #25D366; color: #fff; padding: 40px; border-radius: 20px; text-align: center; text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 15px; }
+        .whatsapp-section { 
+            background: #25D366; 
+            color: #fff; 
+            padding: 40px; 
+            border-radius: 20px; 
+            text-align: center; 
+            text-decoration: none; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            gap: 15px;
+            transition: 0.3s;
+        }
 
         footer { background: #000; color: #888; text-align: center; padding: 40px 0; border-top: 1px solid #222; }
 
@@ -171,7 +288,7 @@
             .menu-btn { display: block; }
             .navbar { position: fixed; top: 100px; left: -100%; width: 100%; height: 100vh; background: #000; flex-direction: column; padding-top: 50px; transition: 0.4s; }
             .navbar.active { left: 0; }
-            .navbar a { font-size: 1.2rem; padding: 15px; width: 100%; text-align: center; }
+            .navbar a { font-size: 1.1rem; padding: 15px; width: 100%; text-align: center; }
         }
     </style>
 </head>
@@ -187,6 +304,7 @@
             </div>
             <nav class="navbar" id="navMenu">
                 <a href="#anasayfa">ANASAYFA</a>
+                <a href="#dilekceler">DİLEKÇELER</a>
                 <a href="#fiyatlar">FİYATLAR</a>
                 <a href="#hakkimizda">HAKKIMIZDA</a>
                 <a href="#uyarilar">UYARILAR</a>
@@ -195,22 +313,126 @@
         </div>
     </header>
 
-    <!-- DÜZELTİLMİŞ HERO BÖLÜMÜ -->
     <section class="hero" id="anasayfa">
         <div class="container">
             <h1>PROFESYONEL DİLEKÇE YAZIMI İÇİN BİZE ULAŞIN!</h1>
             <p>30 yıllık adliye tecrübemizle, taleplerinizi resmi yazışma kurallarına %100 uygun hazırlıyoruz. Hak kaybı yaşamamanız için uzman desteği alın.</p>
-            <a href="#iletisim" class="btn-main">İLETİŞİME GEÇ</a>
+            <a href="#iletisim" class="btn-main">Hemen İletişime Geç</a>
         </div>
     </section>
 
-    <!-- FİYATLAR -->
-    <section id="fiyatlar">
+    <!-- DİLEKÇELER SECTION -->
+    <section id="dilekceler">
         <div class="container">
-            <h2 class="section-title">HİZMETLERİMİZ VE FİYATLAR</h2>
+            <h2 class="section-title">HAZIRLADIĞIMIZ DİLEKÇE TÜRLERİ</h2>
+            <div class="dilekce-grid">
+                
+                <!-- İcra Dilekçesi -->
+                <div class="dilekce-card">
+                    <div class="dilekce-header">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                        <h3>İCRA VE İFLAS HUKUKU</h3>
+                    </div>
+                    <div class="dilekce-body">
+                        <p>İlamsız takip itirazları, borca ve imzaya itiraz dilekçeleri, maaş haczi kaldırma talepleri ve icra mahkemelerine sunulacak şikayet dilekçeleri uzmanlıkla hazırlanır.</p>
+                    </div>
+                    <div class="dilekce-footer">
+                        <div class="dilekce-tags">
+                            <span class="tag">İTİRAZ</span> <span class="tag">HACİZ</span> <span class="tag">İCRA MÜDÜRLÜĞÜ</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Aile Dilekçesi -->
+                <div class="dilekce-card">
+                    <div class="dilekce-header">
+                        <i class="fas fa-users"></i>
+                        <h3>AİLE VE BOŞANMA</h3>
+                    </div>
+                    <div class="dilekce-body">
+                        <p>Anlaşmalı boşanma protokolleri, çekişmeli boşanma dava dilekçeleri, nafaka artırım/azaltım talepleri ve velayet değişikliği dilekçeleri gerekçeli olarak yazılır.</p>
+                    </div>
+                    <div class="dilekce-footer">
+                        <div class="dilekce-tags">
+                            <span class="tag">BOŞANMA</span> <span class="tag">NAFAKA</span> <span class="tag">VELAYET</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gayrimenkul Dilekçesi -->
+                <div class="dilekce-card">
+                    <div class="dilekce-header">
+                        <i class="fas fa-home"></i>
+                        <h3>GAYRİMENKUL VE KİRA</h3>
+                    </div>
+                    <div class="dilekce-body">
+                        <p>Kira tahliye davası dilekçeleri, kira bedel tespiti (uyarlama) talepleri, ecrimisil ve müdahalenin men-i dilekçeleri güncel mevzuata uygun hazırlanır.</p>
+                    </div>
+                    <div class="dilekce-footer">
+                        <div class="dilekce-tags">
+                            <span class="tag">TAHLİYE</span> <span class="tag">KİRA</span> <span class="tag">TESPİT</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ceza / Savcılık -->
+                <div class="dilekce-card">
+                    <div class="dilekce-header">
+                        <i class="fas fa-gavel"></i>
+                        <h3>CEZA VE SORUŞTURMA</h3>
+                    </div>
+                    <div class="dilekce-body">
+                        <p>Cumhuriyet Başsavcılıklarına sunulacak suç duyurusu (şikayet) dilekçeleri, ifade tutanaklarına ek beyanlar ve haksız tutuklamaya itiraz dilekçeleri hazırlanır.</p>
+                    </div>
+                    <div class="dilekce-footer">
+                        <div class="dilekce-tags">
+                            <span class="tag">SUÇ DUYURUSU</span> <span class="tag">SAVCILIK</span> <span class="tag">İTİRAZ</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- İdari Dilekçeler -->
+                <div class="dilekce-card">
+                    <div class="dilekce-header">
+                        <i class="fas fa-university"></i>
+                        <h3>İDARİ VE VERGİ</h3>
+                    </div>
+                    <div class="dilekce-body">
+                        <p>Belediye, Kaymakamlık veya Valiliklere sunulacak resmi talepler, idari para cezalarına itirazlar ve kamu kurumlarına yönelik bilgi edinme başvuruları yazılır.</p>
+                    </div>
+                    <div class="dilekce-footer">
+                        <div class="dilekce-tags">
+                            <span class="tag">İDARE</span> <span class="tag">BELEDİYE</span> <span class="tag">İTİRAZ</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Genel Dilekçeler -->
+                <div class="dilekce-card">
+                    <div class="dilekce-header">
+                        <i class="fas fa-file-alt"></i>
+                        <h3>DİĞER TALEPLER</h3>
+                    </div>
+                    <div class="dilekce-body">
+                        <p>Veraset ilamı (mirasçılık belgesi) talebi, isim/soyisim değişikliği davası, maddi-manevi tazminat talepleri ve her türlü noter ihtarnamesi taslağı hazırlanır.</p>
+                    </div>
+                    <div class="dilekce-footer">
+                        <div class="dilekce-tags">
+                            <span class="tag">VERASET</span> <span class="tag">TAZMİNAT</span> <span class="tag">İHTARNAME</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="fiyatlar" style="background:#fff">
+        <div class="container">
+            <h2 class="section-title">HİZMET ÜCRETLERİMİZ</h2>
             <div class="price-grid">
                 <div class="price-card">
-                    <h3>İCRA İTİRAZ</h3>
+                    <h3 style="color:var(--primary); font-weight:800; margin-bottom:15px;">İCRA İTİRAZ</h3>
                     <div style="font-size: 2.2rem; font-weight: 800; margin: 15px 0;">690 TL</div>
                     <ul style="list-style:none; text-transform:none; text-align:left;">
                         <li style="margin-bottom:10px;"><i class="fas fa-check" style="color:#28a745; margin-right:10px;"></i> RESMİ USULE UYGUN</li>
@@ -237,8 +459,7 @@
         </div>
     </section>
 
-    <!-- HAKKIMIZDA -->
-    <section id="hakkimizda" style="background:#fff">
+    <section id="hakkimizda">
         <div class="container">
             <div class="about-flex">
                 <div class="about-text">
