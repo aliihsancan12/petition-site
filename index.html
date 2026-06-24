@@ -7,7 +7,7 @@
     <title>Dilekçe Kapısı | Profesyonel Hukuki Dilekçe Yazım Hizmeti</title>
     
     <!-- SEO Meta Etiketleri -->
-    <meta name="description" content="30 yıllık adliye tecrübesi ile icra itiraz, boşanma ve kira uyuşmazlığı dilekçelerinizi resmi usule uygun hazırlıyoruz.">
+    <meta name="description" content="30 yıllık adliye tecrübesi ile icra itiraz, boşanma og kira uyuşmazlığı dilekçelerinizi resmi usule uygun hazırlıyoruz.">
     <meta property="og:image" content="logo.png">
 
     <!-- Font Awesome İkon Kütüphanesi -->
@@ -15,7 +15,6 @@
     
     <style>
         /* --- CSS DEĞİŞKENLERİ --- */
-        
         :root {
             --primary: #007bff;
             --secondary: #ffd700;
@@ -225,106 +224,16 @@
             color: #495057;
             font-weight: 600;
         }
-        /* --- YORUM SİSTEMİ STİLLERİ --- */
-.yorum-listesi {
-    max-width: 800px;
-    margin: 0 auto 40px auto;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
 
-.yorum-kart {
-    background: var(--white);
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    border-left: 5px solid var(--primary);
-}
-
-.yorum-profil {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 10px;
-}
-
-.yorum-profil i {
-    font-size: 2.5rem;
-    color: #ccc;
-}
-
-.yorum-profil h4 {
-    font-size: 1rem;
-    color: var(--dark);
-}
-
-.yorum-tarih {
-    font-size: 0.8rem;
-    color: #999;
-}
-
-.yorum-kart p {
-    text-transform: none;
-    color: #555;
-    font-size: 0.95rem;
-}
-
-.yorum-form-kutusu {
-    max-width: 800px;
-    margin: 0 auto;
-    background: var(--white);
-    padding: 30px;
-    border-radius: 16px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-}
-
-.yorum-form-kutusu h3 {
-    margin-bottom: 20px;
-    color: var(--dark);
-    text-align: center;
-}
-
-.yorum-form-kutusu input, .yorum-form-kutusu textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    font-family: inherit;
-}
-
-.yorum-form-kutusu input:focus, .yorum-form-kutusu textarea:focus {
-    border-color: var(--primary);
-    outline: none;
-}
-        <section id="yorumlar" style="background: #f4f8ff;">
-    <div class="container">
-        <h2 class="section-title">MÜŞTERİ YORUMLARI</h2>
-        
-        <div class="yorum-listesi" id="yorumListesi">
-            <div class="yorum-kart">
-                <div class="yorum-profil">
-                    <i class="fas fa-user-circle"></i>
-                    <div>
-                        <h4>Ahmet Y.</h4>
-                        <span class="yorum-tarih">24.06.2026</span>
-                    </div>
-                </div>
-                <p>İcra itiraz dilekçem için destek aldım. Çok hızlı ve resmi usule son derece uygun hazırlandı. Teşekkür ederim.</p>
-            </div>
-        </div>
-
-        <div class="yorum-form-kutusu">
-            <h3>Düşüncelerinizi Paylaşın</h3>
-            <form id="yorumFormu">
-                <input type="text" id="yorumAd" placeholder="ADINIZ SOYADINIZ" required>
-                <textarea id="yorumMetni" rows="4" placeholder="YORUMUNUZU BURAYA YAZIN..." required></textarea>
-                <button type="submit" class="btn-main" style="border:none; cursor:pointer; width:100%;">Yorumu Gönder</button>
-            </form>
-        </div>
-    </div>
-</section>
+        /* --- GISCUS YORUM ALANI ÖZEL KUTUSU --- */
+        .giscus-wrapper {
+            background: var(--white);
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+            max-width: 900px;
+            margin: 0 auto;
+        }
 
         /* --- BÖLÜM AYARLARI --- */
         section { padding: 80px 0; }
@@ -416,6 +325,7 @@
                 <a href="#fiyatlar">FİYATLAR</a>
                 <a href="#hakkimizda">HAKKIMIZDA</a>
                 <a href="#uyarilar">UYARILAR</a>
+                <a href="#yorumlar">YORUMLAR</a>
                 <a href="#iletisim">İLETİŞİM</a>
             </nav>
         </div>
@@ -506,7 +416,7 @@
                         <h3>İŞ HUKUKU VE TAZMİNAT</h3>
                     </div>
                     <div class="dilekce-body">
-                        <p>Kıdem ve ihbar tazminatı talepleri, işe iade davası başvuruları, ödenmeyen fazla mesai ve ücret alacaklarına dair arabuluculuk başvuru ve dava dilekçeleri yazılır.</p>
+                        <p>Kıdem ve ihbar tazminatı talepleri, işe iade davası başvuruları, ödenmeyen fazla mesai ve ücret alacaklarına dair arabuluculuk başvuru og dava dilekçeleri yazılır.</p>
                     </div>
                     <div class="dilekce-footer">
                         <div class="dilekce-tags">
@@ -522,7 +432,7 @@
                         <h3>TÜKETİCİ HUKUKU</h3>
                     </div>
                     <div class="dilekce-body">
-                        <p>Tüketici Hakem Heyeti başvuruları, ayıplı mal ve hizmet iade talepleri, mesafeli satış sözleşmesi uyuşmazlıkları ve Tüketici Mahkemesi dava dilekçeleri düzenlenir.</p>
+                        <p>Tüketici Hakem Heyeti başvuruları, ayıplı mal og hizmet iade talepleri, mesafeli satış sözleşmesi uyuşmazlıkları ve Tüketici Mahkemesi dava dilekçeleri düzenlenir.</p>
                     </div>
                     <div class="dilekce-footer">
                         <div class="dilekce-tags">
@@ -554,7 +464,7 @@
                         <h3>TRAFİK VE SİGORTA</h3>
                     </div>
                     <div class="dilekce-body">
-                        <p>Maddi ve ölümlü/yaralamalı trafik kazası tazminat talepleri, Sigorta Tahkim Komisyonu başvuruları ve haksız trafik cezalarına itiraz dilekçeleri titizlikle yazılır.</p>
+                        <p>Maddi og ölümlü/yaralamalı trafik kazası tazminat talepleri, Sigorta Tahkim Komisyonu başvuruları ve haksız trafik cezalarına itiraz dilekçeleri titizlikle yazılır.</p>
                     </div>
                     <div class="dilekce-footer">
                         <div class="dilekce-tags">
@@ -563,42 +473,11 @@
                     </div>
                 </div>
 
-                <!-- İdari Dilekçeler -->
-                <div class="dilekce-card">
-                    <div class="dilekce-header">
-                        <i class="fas fa-university"></i>
-                        <h3>İDARİ VE VERGİ</h3>
-                    </div>
-                    <div class="dilekce-body">
-                        <p>Belediye, Kaymakamlık veya Valiliklere sunulacak resmi talepler, idari para cezalarına itirazlar ve kamu kurumlarına yönelik bilgi edinme başvuruları yazılır.</p>
-                    </div>
-                    <div class="dilekce-footer">
-                        <div class="dilekce-tags">
-                            <span class="tag">İDARE</span> <span class="tag">BELEDİYE</span> <span class="tag">İTİRAZ</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Genel Dilekçeler -->
-                <div class="dilekce-card">
-                    <div class="dilekce-header">
-                        <i class="fas fa-file-alt"></i>
-                        <h3>DİĞER TALEPLER</h3>
-                    </div>
-                    <div class="dilekce-body">
-                        <p>İsim ve soyisim değişikliği davaları, her türlü noter ihtarnamesi taslağı oluşturma, resmi makamlara genel amaçlı bildirim ve başvuru metinleri özenle sunulur.</p>
-                    </div>
-                    <div class="dilekce-footer">
-                        <div class="dilekce-tags">
-                            <span class="tag">İSİM DEĞİŞİKLİĞİ</span> <span class="tag">İHTARNAME</span> <span class="tag">GENEL TALEP</span>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
 
+    <!-- HİZMET ÜCRETLERİ SECTION -->
     <section id="fiyatlar" style="background:#fff">
         <div class="container">
             <h2 class="section-title">HİZMET ÜCRETLERİMİZ</h2>
@@ -631,6 +510,7 @@
         </div>
     </section>
 
+    <!-- HAKKIMIZDA SECTION -->
     <section id="hakkimizda">
         <div class="container">
             <div class="about-flex">
@@ -646,6 +526,7 @@
         </div>
     </section>
 
+    <!-- UYARILAR SECTION -->
     <section id="uyarilar">
         <div class="container">
             <div class="warning-box">
@@ -655,6 +536,20 @@
         </div>
     </section>
 
+    <!-- KULLANICI YORUMLARI (GISCUS) SECTION -->
+    <section id="yorumlar" style="background:#f4f8ff">
+        <div class="container">
+            <h2 class="section-title">KULLANICI YORUMLARI</h2>
+            <div class="giscus-wrapper">
+                
+                <!-- ⚠️ BURASI ÖNEMLİ: giscus.app sitesinden aldığın <script>...</script> kodunu tam olarak buraya (bu yazının altına) yapıştıracaksın -->
+                <div class="giscus">Yorum sistemi yükleniyor...</div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- İLETİŞİM SECTION -->
     <section id="iletisim" style="background:#fff">
         <div class="container">
             <h2 class="section-title">BİZE ULAŞIN</h2>
@@ -673,12 +568,14 @@
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer>
         <div class="container">
             <p style="font-weight:700; margin-bottom:10px;">&copy; 2026 DİLEKÇE KAPISI - TÜM HAKLARI SAKLIDIR.</p>
         </div>
     </footer>
 
+    <!-- MOBILE MENU JAVASCRIPT -->
     <script>
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navMenu = document.getElementById('navMenu');
@@ -695,5 +592,3 @@
     </script>
 </body>
 </html>
-      
-      
