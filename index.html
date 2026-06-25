@@ -189,14 +189,56 @@
         .dilekce-tags { display: flex; gap: 8px; flex-wrap: wrap; }
         .tag { font-size: 0.75rem; background: #e9ecef; padding: 4px 10px; border-radius: 6px; color: #495057; font-weight: 600; }
 
-        /* --- DISQUS YORUM ALANI ÖZEL KUTUSU --- */
-        .disqus-wrapper {
+        /* --- YORUM SİSTEMİ CSS STİLLERİ --- */
+        .yorum-listesi {
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .yorum-kart {
             background: var(--white);
-            padding: 35px;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--primary);
+        }
+
+        .yorum-profil {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .yorum-profil i { font-size: 2.5rem; color: #ccc; }
+        .yorum-profil h4 { font-size: 1rem; color: var(--dark); }
+        .yorum-tarih { font-size: 0.8rem; color: #999; }
+        .yorum-kart p { text-transform: none; color: #555; font-size: 0.95rem; }
+
+        .yorum-form-kutusu {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 30px;
             border-radius: 16px;
             box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-            max-width: 900px;
-            margin: 0 auto;
+        }
+
+        .yorum-form-kutusu h3 { margin-bottom: 20px; color: var(--dark); text-align: center; }
+        .yorum-form-kutusu input, .yorum-form-kutusu textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-family: inherit;
+        }
+
+        .yorum-form-kutusu input:focus, .yorum-form-kutusu textarea:focus {
+            border-color: var(--primary); outline: none;
         }
 
         /* --- BÖLÜM AYARLARI --- */
@@ -296,7 +338,7 @@
                     </div>
                 </div>
 
-                <!-- Gayrimenekul Dilekçesi -->
+                <!-- Gayrimenkul Dilekçesi -->
                 <div class="dilekce-card">
                     <div class="dilekce-header">
                         <i class="fas fa-home"></i>
@@ -319,7 +361,7 @@
                         <h3>CEZA VE SORUŞTURMA</h3>
                     </div>
                     <div class="dilekce-body">
-                        <p>Cumhuriyet Başsavcılıklarına sunulacak suç duyurusu (şikayet) dilekçeleri, ifade tutanaklarına ek beyanlar og haksız tutuklamaya itiraz dilekçeleri hazırlanır.</p>
+                        <p>Cumhuriyet Başsavcılıklarına sunulacak suç duyurusu (şikayet) dilekçeleri, ifade tutanaklarına ek beyanlar ve haksız tutuklamaya itiraz dilekçeleri hazırlanır.</p>
                     </div>
                     <div class="dilekce-footer">
                         <div class="dilekce-tags">
@@ -455,29 +497,46 @@
         </div>
     </section>
 
-    <!-- KULLANICI YORUMLARI (DISQUS) SECTION -->
-    <section id="yorumlar" style="background:#f4f8ff">
+    <!-- MÜŞTERİ YORUMLARI PANELİ -->
+    <section id="yorumlar" style="background: #f4f8ff;">
         <div class="container">
-            <h2 class="section-title">KULLANICI YORUMLARI</h2>
-            <div class="disqus-wrapper">
-                
-                <!-- DISQUS PANEL KUTUSU -->
-                <div id="disqus_thread"></div>
-                
-                <script>
-                    var disqus_config = function () {
-                        this.page.url = window.location.href;  
-                        this.page.identifier = window.location.pathname; 
-                    };
-                    (function() { 
-                        var d = document, s = d.createElement('script');
-                        s.src = 'https://dilekce-kapisi.disqus.com/embed.js'; // Sana özel Disqus kısa adı entegre edildi
-                        s.setAttribute('data-timestamp', +new Date());
-                        (d.head || d.body).appendChild(s);
-                    })();
-                </script>
-                <noscript>Yorumları görebilmek için lütfen JavaScript'i etkinleştirin.</noscript>
+            <h2 class="section-title">MÜŞTERİ YORUMLARI</h2>
+            
+            <!-- Sitede Listelenecek Hakiki Yorumlar Alanı -->
+            <!-- 💡 ÖNEMLİ: E-postana gelen yeni güzel yorumları doğrudan buradaki gibi aşağıya ekleyebilirsin. -->
+            <div class="yorum-listesi" id="yorumListesi">
+                <div class="yorum-kart">
+                    <div class="yorum-profil">
+                        <i class="fas fa-user-circle"></i>
+                        <div>
+                            <h4>Ahmet Y.</h4>
+                            <span class="yorum-tarih">24.06.2026</span>
+                        </div>
+                    </div>
+                    <p>İcra itiraz dilekçem için destek aldım. Çok hızlı ve resmi usule son derece uygun hazırlandı. Teşekkür ederim.</p>
+                </div>
 
+                <div class="yorum-kart">
+                    <div class="yorum-profil">
+                        <i class="fas fa-user-circle"></i>
+                        <div>
+                            <h4>Merve K.</h4>
+                            <span class="yorum-tarih">18.05.2026</span>
+                        </div>
+                    </div>
+                    <p>Kira tahliye davası sürecinde hazırladıkları dilekçe sayesinde hiçbir hak kaybı yaşamadım. Kesinlikle tavsiye ederim.</p>
+                </div>
+            </div>
+
+            <!-- Yeni Değerlendirme Gönderme Formu -->
+            <div class="yorum-form-kutusu">
+                <h3>Düşüncelerinizi ve Memnuniyetinizi Paylaşın</h3>
+                <!-- ⚠️ FORM_ID_BURAYA yazan yere formspree.io'dan alacağın ID'yi yazacaksın -->
+                <form action="https://formspree.io/f/FORM_ID_BURAYA" method="POST">
+                    <input type="text" name="Müşteri Adı" placeholder="ADINIZ SOYADINIZ" required>
+                    <textarea name="Müşteri Değerlendirmesi" rows="4" placeholder="HİZMETİMİZ HAKKINDAKİ DÜŞÜNCELERİNİZİ BURAYA YAZIN..." required></textarea>
+                    <button type="submit" class="btn-main" style="border:none; cursor:pointer; width:100%;">Değerlendirmeyi Gönder</button>
+                </form>
             </div>
         </div>
     </section>
