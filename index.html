@@ -189,8 +189,8 @@
         .dilekce-tags { display: flex; gap: 8px; flex-wrap: wrap; }
         .tag { font-size: 0.75rem; background: #e9ecef; padding: 4px 10px; border-radius: 6px; color: #495057; font-weight: 600; }
 
-        /* --- GISCUS YORUM ALANI ÖZEL KUTUSU --- */
-        .giscus-wrapper {
+        /* --- DISQUS YORUM ALANI ÖZEL KUTUSU --- */
+        .disqus-wrapper {
             background: var(--white);
             padding: 35px;
             border-radius: 16px;
@@ -271,7 +271,7 @@
                         <h3>İCRA VE İFLAS HUKUKU</h3>
                     </div>
                     <div class="dilekce-body">
-                        <p>İlamsız takip itirazları, borca og imzaya itiraz dilekçeleri, maaş haczi kaldırma talepleri ve icra mahkemelerine sunulacak şikayet dilekçeleri uzmanlıkla hazırlanır.</p>
+                        <p>İlamsız takip itirazları, borca ve imzaya itiraz dilekçeleri, maaş haczi kaldırma talepleri ve icra mahkemelerine sunulacak şikayet dilekçeleri uzmanlıkla hazırlanır.</p>
                     </div>
                     <div class="dilekce-footer">
                         <div class="dilekce-tags">
@@ -296,7 +296,7 @@
                     </div>
                 </div>
 
-                <!-- Gayrimenkul Dilekçesi -->
+                <!-- Gayrimenekul Dilekçesi -->
                 <div class="dilekce-card">
                     <div class="dilekce-header">
                         <i class="fas fa-home"></i>
@@ -319,7 +319,7 @@
                         <h3>CEZA VE SORUŞTURMA</h3>
                     </div>
                     <div class="dilekce-body">
-                        <p>Cumhuriyet Başsavcılıklarına sunulacak suç duyurusu (şikayet) dilekçeleri, ifade tutanaklarına ek beyanlar ve haksız tutuklamaya itiraz dilekçeleri hazırlanır.</p>
+                        <p>Cumhuriyet Başsavcılıklarına sunulacak suç duyurusu (şikayet) dilekçeleri, ifade tutanaklarına ek beyanlar og haksız tutuklamaya itiraz dilekçeleri hazırlanır.</p>
                     </div>
                     <div class="dilekce-footer">
                         <div class="dilekce-tags">
@@ -455,30 +455,28 @@
         </div>
     </section>
 
-    <!-- KULLANICI YORUMLARI (GISCUS) SECTION -->
+    <!-- KULLANICI YORUMLARI (DISQUS) SECTION -->
     <section id="yorumlar" style="background:#f4f8ff">
         <div class="container">
             <h2 class="section-title">KULLANICI YORUMLARI</h2>
-            <div class="giscus-wrapper">
+            <div class="disqus-wrapper">
                 
-                <div class="giscus">Yorum sistemi yükleniyor...</div>
+                <!-- DISQUS PANEL KUTUSU -->
+                <div id="disqus_thread"></div>
                 
-                <!-- Otomatik Entegre Edilen Giscus Script Kodu -->
-                <script src="https://giscus.app/client.js"
-                        data-repo="aliihsancan12/petition-site"
-                        data-repo-id="R_kgDONXzW_A"
-                        data-category="Announcements"
-                        data-category-id="DIC_kwDONXzW_M4ClAnV"
-                        data-mapping="pathname"
-                        data-strict="0"
-                        data-reactions-enabled="1"
-                        data-emit-metadata="0"
-                        data-input-position="bottom"
-                        data-theme="light"
-                        data-lang="tr"
-                        crossorigin="anonymous"
-                        async>
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = window.location.href;  
+                        this.page.identifier = window.location.pathname; 
+                    };
+                    (function() { 
+                        var d = document, s = d.createElement('script');
+                        s.src = 'https://dilekce-kapisi.disqus.com/embed.js'; // Sana özel Disqus kısa adı entegre edildi
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                    })();
                 </script>
+                <noscript>Yorumları görebilmek için lütfen JavaScript'i etkinleştirin.</noscript>
 
             </div>
         </div>
