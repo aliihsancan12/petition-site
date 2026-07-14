@@ -18,6 +18,8 @@
 <meta property="og:url" content="https://aliihsancan12.github.io/petition-site/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#000000">
+  
+
 <script type="application/ld+json">
 {
 "@context":"https://schema.org",
@@ -247,15 +249,25 @@
             .navbar a { font-size: 1.3rem; padding: 20px; width: 100%; text-align: center; border-radius: 0; }
         }
     
-/* FAQ */
-.faq-item{background:#fff;border:1px solid #ddd;border-radius:10px;margin-bottom:15px;overflow:hidden}
-.faq-q{padding:18px;font-weight:700;cursor:pointer;background:#f8f9fa}
-.faq-a{max-height:0;overflow:hidden;padding:0 18px;transition:.35s}
-.faq-item.active .faq-a{max-height:200px;padding:18px}
-.reveal{opacity:0;transform:translateY(40px);transition:.7s}
-.reveal.show{opacity:1;transform:none}
-.footer-links{margin-top:20px;display:flex;justify-content:center;gap:18px;flex-wrap:wrap}
-.footer-links a{color:#ccc;text-decoration:none}
+
+       
+.faq-q {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: none; /* Soru kısmının okunabilirliğini artırmak için sadece buradaki büyük harf zorunluluğunu kaldırır */
+}
+
+.faq-q i {
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+    color: var(--primary);
+}
+
+/* Soru kutusu aktif olduğunda okun yukarı dönmesini sağlar */
+.faq-item.active .faq-q i {
+    transform: rotate(180deg);
+}
 
 </style>
 </head>
@@ -275,6 +287,7 @@
                 <a href="#fiyatlar">FİYATLAR</a>
                 <a href="#hakkimizda">HAKKIMIZDA</a>
                 <a href="#uyarilar">UYARILAR</a>
+                <a href="#sss">S.S.S.</a>
                 <a href="#yorumlar">YORUMLAR</a>
                 <a href="#iletisim">İLETİŞİM</a>
             </nav>
@@ -520,10 +533,22 @@
 <section id="sss">
 <div class="container reveal">
 <h2 class="section-title">SIK SORULAN SORULAR</h2>
-<div class="faq-item"><div class="faq-q">Dilekçe kaç günde hazırlanır?</div><div class="faq-a"><p>Çoğu dilekçe aynı gün veya 24 saat içinde hazırlanır.</p></div></div>
-<div class="faq-item"><div class="faq-q">Ödeme nasıl yapılır?</div><div class="faq-a"><p>Bilgilendirme sonrası banka havalesi/EFT ile ödeme alınır.</p></div></div>
-<div class="faq-item"><div class="faq-q">Dilekçe nasıl teslim edilir?</div><div class="faq-a"><p>PDF formatında WhatsApp üzerinden gönderilir.</p></div></div>
-<div class="faq-item"><div class="faq-q">Avukatlık hizmeti veriyor musunuz?</div><div class="faq-a"><p>Hayır. Teknik dilekçe hazırlama ve süreç yönlendirme desteği sunulmaktadır.</p></div></div>
+<div class="faq-item">
+    <div class="faq-q">Dilekçe kaç günde hazırlanır? <i class="fas fa-chevron-down"></i></div>
+    <div class="faq-a"><p>Çoğu dilekçe aynı gün veya 24 saat içinde hazırlanır.</p></div>
+</div>
+<div class="faq-item">
+    <div class="faq-q">Ödeme nasıl yapılır? <i class="fas fa-chevron-down"></i></div>
+    <div class="faq-a"><p>Bilgilendirme sonrası banka havalesi/EFT ile ödeme alınır.</p></div>
+</div>
+<div class="faq-item">
+    <div class="faq-q">Dilekçe nasıl teslim edilir? <i class="fas fa-chevron-down"></i></div>
+    <div class="faq-a"><p>PDF formatında WhatsApp üzerinden gönderilir.</p></div>
+</div>
+<div class="faq-item">
+    <div class="faq-q">Avukatlık hizmeti veriyor musunuz? <i class="fas fa-chevron-down"></i></div>
+    <div class="faq-a"><p>Hayır. Teknik dilekçe hazırlama ve süreç yönlendirme desteği sunulmaktadır.</p></div>
+</div>
 </div>
 </section>
 
